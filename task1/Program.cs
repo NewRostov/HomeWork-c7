@@ -9,9 +9,9 @@
 
 Random rnd = new Random();
 Random rand = new Random();
-Console.Write("Введите m: ");
+Console.Write("Введите размерность m:  ");
 int m = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите n: ");
+Console.Write("Введите размерность n:  ");
 int n = Convert.ToInt32(Console.ReadLine());
 
 double[,] array = new double[m,n];
