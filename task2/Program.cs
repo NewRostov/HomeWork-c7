@@ -7,32 +7,64 @@
 //8 4 2 4
 //17 -> такого числа в массиве нет
 
-//if (array[i,j] == num) 
-    //{
-   //     Console.WriteLine("Строка: " + i + ", " + "Столбец: " + j); 
-   // }
 
-Random rnd = new Random();
-Random rand = new Random();
-Console.Write("Введите размерность m:  ");
-int m = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите размерность n:  ");
-int n = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите значение элемента:  ");
-int num = Convert.ToInt32(Console.ReadLine());
-
-int[,] array = new int[m,n];
-
-for (int i = 0; i < n; i++)
+internal class Program
 {
-    for (int j = 0; j < n; j++)
+    private static void Main(string[] args)
     {
-    array[i,j] = rnd.Next(1,4);
-    if (array[i,j] == num) Console.WriteLine("Элемент " + num + " найден, строка: " + i + ", " + "Столбец: " + j); 
-    
-    else if  (array[i,j] != num) Console.WriteLine("Элемента не найден"); 
- 
+        Random rand = new Random();
+        Console.Write("Введите размерность m:  ");
+        int m = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Введите размерность n:  ");
+        int n = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Введите значение элемента:  ");
+        int num = Convert.ToInt32(Console.ReadLine());
+
+        int[,] arr1 = new int[m, n];
+
+        void fillAray(int[,] arrayToFill)
+        {
+            for (int i = 0; i < arrayToFill.GetLength(0); i++)
+            {
+                for (int j = 0; j < arrayToFill.GetLength(1); j++)
+                {
+                    {
+                        arr1[i, j] = new Random().Next(1, 9);
+                        Console.Write($"{arr1[i, j]} ");
+                    }
+
+
+
+                    // if (array[i,j] == num) Console.WriteLine("Элемент " + num + " найден, строка: " + i + ", " + "Столбец: " + j); 
+
+                    // else if  (array[i,j] != num) Console.WriteLine("Элемента не найден"); 
+
+                }
+
+                Console.WriteLine();
+            }
+        }
+
+
+        // вычесляем элемент
+
+        void elementArr(int[,] arr, int num)
+        {
+            bool find = false;
+            for (int i = 0; i < arr1.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr1.GetLength(1); j++)
+                {
+                    if (arr1[i, j] == num) Console.WriteLine("Элемент " + num + " найден: строка: " + (i + 1) + ", " + "Столбец: " + (j + 1));
+                    find = true;
+
+                }
+            }
+            if (!find) Console.WriteLine("Элемента не найден");
+        }
+
+        fillAray(arr1);
+
+        elementArr(arr1, num);
     }
 }
-
-
