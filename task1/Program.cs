@@ -8,7 +8,6 @@
 
 
 Random rnd = new Random();
-Random rand = new Random();
 Console.Write("Введите размерность m:  ");
 int m = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите размерность n:  ");
@@ -16,12 +15,21 @@ int n = Convert.ToInt32(Console.ReadLine());
 
 double[,] array = new double[m,n];
 
-for (int i = 0; i < n; i++)
+
+void randomArray(double[, ] arr)
 {
-    for (int j = 0; j < n; j++)
+for (int i = 0; i < arr.GetLength(0); i++)
+{
+    for (int j = 0; j < arr.GetLength(1); j++)
     {
     array[i,j] = rnd.NextDouble();
     Console.Write($"{array[i,j]:F2} "); 
     }
     Console.WriteLine(); 
 }
+}
+
+Console.WriteLine(); 
+
+randomArray(array);
+
